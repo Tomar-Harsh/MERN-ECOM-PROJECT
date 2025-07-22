@@ -10,9 +10,15 @@ const app = require("./app");
 //const dotenv = require("dotenv");
 // Config file ko set kar rahe hain taki environment variables load ho jayein
 //dotenv.config({ path: "./config/config.env" });
+
+// Connect Database
+const connectDatabase = require("./config/database");
+connectDatabase();
+
+
 const PORT = process.env.PORT || 4000;
 // Server ko start kar rahe hain aur port number console me dikha rahe hain
-// const PORT = 4000;
+// const PORT = 4000; error arha h dot env ka use karne se
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
 });
