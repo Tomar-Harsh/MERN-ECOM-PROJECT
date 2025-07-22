@@ -56,8 +56,8 @@ router.delete('/remove/:productId', async (req, res) => {
 router.patch('/update', async (req, res) => {
   const { productId, quantity } = req.body;
   try {
-    console.log(req.user.id,"user id");
-    let cart = await Cart.findOne({ userId: req.user.id });
+    console.log(req.user.id,"user id",req.body.productId);
+    let cart = await Cart.findOne({ userId: req.user.id  });
     if (!cart) return res.status(404).json({ success: false, message: 'Cart not found' });
     const item = cart.items.find(item => item.product.equals(productId));
     if (!item) return res.status(404).json({ success: false, message: 'Product not in cart' });

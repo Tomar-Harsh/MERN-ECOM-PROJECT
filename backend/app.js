@@ -1,7 +1,11 @@
 // import express / Express module ko import kar rahe hain
 const express = require("express");
+
+const cors = require("cors");
+
 const app = express(); //Express app ka object bana rahe hain
 
+app.use(cors());
 app.use(express.json());
 
 const authRoutes = require("./routes/authRoutes");

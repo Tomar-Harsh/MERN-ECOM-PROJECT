@@ -1,6 +1,8 @@
-const users = [
-  { id: '1', username: 'alice', password: 'pass123' },
-  { id: '2', username: 'bob', password: 'bobpass' },
-];
+const mongoose = require('mongoose');
 
-module.exports = users; 
+const userSchema = new mongoose.Schema({
+  username: { type: String, required: true, unique: true },
+  password: { type: String, required: true }
+});
+
+module.exports = mongoose.model('User', userSchema); 

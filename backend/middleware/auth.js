@@ -1,9 +1,9 @@
 const jwt = require('jsonwebtoken');
-const users = require('../models/User');
+const User = require('../models/User');
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';
 
-const auth = (req, res, next) => {
+const auth = async (req, res, next) => {
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
     return res.status(401).json({ success: false, message: 'No token provided' });
@@ -12,12 +12,13 @@ const auth = (req, res, next) => {
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
     // Attach user info to request
-    req.user = users.find(u => u.id === decoded.id);
+    req.user = await User.findById(decoded.id);
     if (!req.user) {
       return res.status(401).json({ success: false, message: 'User not found' });
     }
     next();
   } catch (err) {
+    console.log(err, "error");
     return res.status(401).json({ success: false, message: 'Invalid token' });
   }
 };
