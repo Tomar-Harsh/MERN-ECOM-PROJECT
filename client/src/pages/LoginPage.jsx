@@ -26,6 +26,7 @@ const LoginPage = () => {
             value={username}
             onChange={e => setUsername(e.target.value)}
             required
+            placeholder="e.g. alice"
           />
         </div>
         <div className="mb-6">
@@ -36,6 +37,7 @@ const LoginPage = () => {
             value={password}
             onChange={e => setPassword(e.target.value)}
             required
+            placeholder="e.g. pass123"
           />
         </div>
         <button
