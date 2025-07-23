@@ -5,7 +5,14 @@ const cors = require("cors");
 
 const app = express(); //Express app ka object bana rahe hain
 
-app.use(cors());
+// Configure CORS to allow requests from anywhere
+app.use(cors({
+  origin: '*', // Allow all origins
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], // Allow all methods
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'], // Allow all headers
+  credentials: true // Allow credentials
+}));
+
 app.use(express.json());
 
 const authRoutes = require("./routes/authRoutes");
