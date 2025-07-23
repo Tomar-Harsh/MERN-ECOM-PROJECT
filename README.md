@@ -2,7 +2,7 @@
 
 > **Author: Harsh Tomar**
 
-Welcome to the ultimate beginner-friendly, quirky, and fully-featured MERN E-Commerce project! This repo is your one-stop shop for learning how to build a full-stack app with MongoDB, Express, React, and Node.js. Brought to you by **Harsh Tomar** (yes, that's me!).
+Welcome to the ultimate beginner-friendly, quirky, and fully-featured MERN E-Commerce project! This repo is your one-stop shop for learning how to build a full-stack app with MongoDB, Express, React, and Node.js.
 
 ---
 
@@ -26,18 +26,18 @@ Welcome to the ultimate beginner-friendly, quirky, and fully-featured MERN E-Com
 
 ---
 
-## 🛠️ How I (Harsh Tomar) Built This
+## 🛠️ How This Was Built
 
 - **MongoDB Atlas** for the database (cloudy with a chance of data!)
 - **Mongoose** for schema modeling (no more wild west data)
 - **React functional components & hooks** (`useState`, `useEffect`) for a modern, snappy UI
 - **Backend & frontend run on separate ports** (no port fights here)
 - **Zen-inspired UI** for a premium, minimalist shopping experience
-- **All requirements & bonus features?** You bet, all checked off by Harsh Tomar!
+- **All requirements & bonus features?** You bet, all checked off!
 
 ---
 
-## 🚦 Quick Start (by Harsh Tomar)
+## 🚦 Quick Start
 
 ### 1. Clone the Repo
 ```bash
@@ -81,21 +81,21 @@ Open [http://localhost:3000](http://localhost:3000) and enjoy!
 ## 🌍 Live Demo
 - **Frontend:** [Your Frontend Link](https://your-frontend-deployment-link.com)
 - **Backend:** [Backend API](https://mern-ecom-project-r5rk.onrender.com)
-- **GitHub:** [Repo by Harsh Tomar](https://github.com/Tomar-Harsh/MERN-ECOM-PROJECT)
+- **GitHub:** [Repo](https://github.com/Tomar-Harsh/MERN-ECOM-PROJECT)
 
 ---
 
 ## 📦 Folder Structure
 ```
 MERN ECOM PROJECT/
-  backend/    # Express + MongoDB API (by Harsh Tomar)
-  client/     # React frontend (by Harsh Tomar)
+  backend/    # Express + MongoDB API
+  client/     # React frontend
 ```
 
 ---
 
 ## 💡 Why This Project?
-This was a big learning curve for me (**Harsh Tomar**), and I hope it helps you too! Whether you’re a beginner or just want to see how a real-world MERN stack app is built, you’re in the right place.
+This project was a big learning curve, and hopefully it helps you too! Whether you’re a beginner or just want to see how a real-world MERN stack app is built, you’re in the right place.
 
 ---
 
@@ -106,4 +106,4 @@ This was a big learning curve for me (**Harsh Tomar**), and I hope it helps you 
 ---
 
 ## 📝 License
-This project is for educational/demo purposes. Built with ❤️ by Harsh Tomar. 
+This project is for educational/demo purposes. Built with ❤️. 
