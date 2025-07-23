@@ -29,20 +29,18 @@ const Header = () => {
           {token && (
             <Link
               to="/cart"
-              className="relative flex items-center gap-2 font-semibold text-base group"
-              style={{ color: 'var(--zen-black)', padding: '0.25rem 0.5rem', transition: 'color 0.3s', minWidth: 90 }}
+              className="relative flex items-center group"
+              style={{ color: 'var(--zen-black)', padding: '0.25rem 0.5rem', transition: 'color 0.3s', minWidth: 40 }}
+              aria-label="View cart"
             >
-              <span className="flex items-center gap-1">
-                <span className="material-icons-outlined" style={{ fontSize: '1.7rem', verticalAlign: 'middle', lineHeight: 1 }}>
-                  shopping_cart
-                </span>
-                <span style={{ fontSize: '1.08rem', fontWeight: 600, letterSpacing: '0.01em' }}>Cart</span>
-                {cart.length > 0 && (
-                  <span className="cart-badge" style={{ marginLeft: '0.3rem', fontSize: '0.85rem', padding: '0.18em 0.7em' }}>{cart.length}</span>
-                )}
+              <span className="material-icons-outlined" style={{ fontSize: '1.7rem', verticalAlign: 'middle', lineHeight: 1 }}>
+                shopping_cart
               </span>
               {cart.length > 0 && (
-                <span className="ml-2 text-xs text-gray-500" style={{ fontSize: '0.98rem', fontWeight: 500, color: '#888' }}>${totalAmount.toFixed(2)}</span>
+                <span className="cart-badge" style={{ position: 'absolute', top: '-8px', right: '-10px', fontSize: '0.82rem', padding: '0.15em 0.6em' }}>{cart.length}</span>
+              )}
+              {cart.length > 0 && (
+                <span className="ml-1 text-xs text-gray-500" style={{ fontSize: '0.93rem', fontWeight: 500, color: '#888' }}>${totalAmount.toFixed(2)}</span>
               )}
               <span className="block h-0.5 bg-transparent group-hover:bg-[var(--zen-orange)] transition-all duration-300 absolute left-0 right-0 -bottom-1"></span>
             </Link>

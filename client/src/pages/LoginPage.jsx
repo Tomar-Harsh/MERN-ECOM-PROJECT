@@ -40,10 +40,17 @@ const LoginPage = () => {
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 font-semibold"
+          className="w-full cta-primary mb-3"
           disabled={loading}
         >
           {loading ? 'Logging in...' : 'Login'}
+        </button>
+        <button
+          type="button"
+          className="w-full cta-secondary"
+          onClick={() => window.location.href = '/register'}
+        >
+          Register
         </button>
       </form>
     </div>
