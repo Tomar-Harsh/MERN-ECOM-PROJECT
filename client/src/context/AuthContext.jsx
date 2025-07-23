@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
-import axios from 'axios';
+import api from '../services/api';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -12,15 +12,15 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     if (token) {
-      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
     } else {
-      delete axios.defaults.headers.common['Authorization'];
+      delete api.defaults.headers.common['Authorization'];
     }
   }, [token]);
 
   const login = async (username, password) => {
     try {
-      const res = await axios.post('http://localhost:4000/api/v1/auth/login', { username, password });
+      const res = await api.post('/auth/login', { username, password });
       localStorage.setItem('token', res.data.token);
       setToken(res.data.token);
       toast.success('Login successful');
@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (username, password) => {
     try {
-      await axios.post('http://localhost:4000/api/v1/auth/register', { username, password });
+      await api.post('/auth/register', { username, password });
       toast.success('Registration successful. Please login.');
       navigate('/login');
     } catch (err) {
