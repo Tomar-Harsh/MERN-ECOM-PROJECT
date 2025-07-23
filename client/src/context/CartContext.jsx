@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import api from '../services/api';
 import { toast } from 'react-toastify';
+import { useAuth } from './AuthContext';
 
 const CartContext = createContext();
 
@@ -8,8 +9,10 @@ export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(false);
   const [totalAmount, setTotalAmount] = useState(0);
+  const { token } = useAuth();
 
   const fetchCart = useCallback(async () => {
+    if (!token) return; // Only fetch if authenticated
     setLoading(true);
     try {
       const res = await api.get('/cart');
@@ -20,11 +23,15 @@ export function CartProvider({ children }) {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [token]);
 
   useEffect(() => {
-    fetchCart();
-  }, [fetchCart]);
+    if (token) {
+      fetchCart();
+    } else {
+      setCart([]);
+    }
+  }, [fetchCart, token]);
 
   useEffect(() => {
     const total = Array.isArray(cart)
