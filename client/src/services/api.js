@@ -1,7 +1,10 @@
 import axios from 'axios';
 
+const baseURL = import.meta.env.VITE_API_BASE_URL;
+// Use baseURL in your axios or fetch setup
+
 const api = axios.create({
-  baseURL: 'http://localhost:4000/api/v1/',
+    baseURL,
 });
 
 api.interceptors.request.use((config) => {
